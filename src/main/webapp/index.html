@@ -1,19 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<meta charset="ISO-8859-1">
-<title>Página Inicial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PÃ¡gina Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007BFF;
+            background-color: #fff;
+            border: 2px solid #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-	<h1>Menu</h1>
-	<br/>
-	<form method="get" action="/ic812aps/novo_cliente.html">
-    	<button type="submit">Cadastrar Cliente</button>
-	</form>
-	<br/>
-	<form method="get" action="/ic812aps/buscar_produto.html">
-    	<button type="submit">Buscar produtos</button>
-	</form>
-	
+    <div class="container">
+        <h1>Menu</h1>
+        <nav>
+            <ul>
+                <li><a href="/ic812aps/novo_cliente.html">Cadastrar Cliente</a></li>
+                <li><a href="/ic812aps/buscar_produto.html">Buscar Produtos</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>

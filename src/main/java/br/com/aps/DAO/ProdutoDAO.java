@@ -25,11 +25,82 @@ public class ProdutoDAO extends DAO<Produto> {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	
+	public CD getCDById(int id) {
+		
+		CD cd = new CD();
+		
+		try{
+			
+			Connection conexao = ConexaoBD.getConnection();
+			Statement stmt = conexao.createStatement();
+			
+						   
+		    String queryCD = "SELECT * FROM CD WHERE id = "+id;
+		 		    		     
+		    ResultSet resultadoCD = stmt.executeQuery(queryCD);
+	    
+		    while(resultadoCD.next()){ 
+		    	cd.setId(resultadoCD.getInt("id"));
+		    	cd.setCodigo(resultadoCD.getInt("codigo"));
+		    	cd.setTitulo(resultadoCD.getString("titulo"));
+		    	cd.setPreco(resultadoCD.getDouble("preco"));
+		    	cd.setDescricao(resultadoCD.getString("descricao"));
+		    	cd.setArtista(resultadoCD.getString("artista"));
+		    	
+		    			    	
+		    }
 
-	@Override
-	public Produto get(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		    stmt.getMoreResults(Statement.KEEP_CURRENT_RESULT);
+
+		   		    				     
+		    stmt.close(); 
+		    conexao.close();
+			
+		}catch(SQLException sqle){
+
+		     sqle.printStackTrace();
+		     
+		}
+		return cd;
+	}
+	
+public DVD getDVDById(int id) {
+		
+		DVD dvd = new DVD();
+		
+		try{
+			
+			Connection conexao = ConexaoBD.getConnection();
+			Statement stmt = conexao.createStatement();
+			
+						   
+		    String queryDVD = "SELECT * FROM DVD WHERE id = "+id;
+		 		    		     
+		    ResultSet resultadoDVD = stmt.executeQuery(queryDVD);
+	    
+		    while(resultadoDVD.next()){ 
+		    	dvd.setId(resultadoDVD.getInt("id"));
+		    	dvd.setCodigo(resultadoDVD.getInt("codigo"));
+		    	dvd.setTitulo(resultadoDVD.getString("titulo"));
+		    	dvd.setPreco(resultadoDVD.getDouble("preco"));
+		    	dvd.setDescricao(resultadoDVD.getString("descricao"));
+		    	dvd.setDuracao(resultadoDVD.getInt("duracao"));
+		       			    	
+		    }
+
+		    stmt.getMoreResults(Statement.KEEP_CURRENT_RESULT);
+			    				     
+		    stmt.close(); 
+		    conexao.close();
+			
+		}catch(SQLException sqle){
+
+		     sqle.printStackTrace();
+		     
+		}
+		return dvd;
 	}
 
 	@Override
@@ -41,7 +112,7 @@ public class ProdutoDAO extends DAO<Produto> {
 			
 			Connection conexao = ConexaoBD.getConnection();
 			Statement stmt = conexao.createStatement();
-			Statement stmt2 = conexao.createStatement();
+			
 		     
 		   
 		    String queryCD = "SELECT * FROM CD WHERE titulo LIKE '%"+palavrachave+"%'";
@@ -94,6 +165,12 @@ public class ProdutoDAO extends DAO<Produto> {
 
 	@Override
 	public List<Produto> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Produto get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

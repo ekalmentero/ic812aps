@@ -2,6 +2,8 @@ package br.com.aps.DAO;
 
 import java.util.List;
 
+
+
 /* a classe abstrata DAO utiliza Java Generics para definir valores de retorno e atributo genéricos*/
 
 public abstract class DAO<T> {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Pedido {
 	private int codigo;
 	private ArrayList<Produto> produtos = new ArrayList<>();
-	private double valorTotal;
+	
 	
 
 	public Pedido (int codigo) {
@@ -32,18 +32,15 @@ public class Pedido {
 		this.codigo = codigo;
 	}
 	
-	public double calcularValorTotal() {
+	public double getValorTotal() {
 		double total = 0;
 		for (Produto produto : this.produtos) {
 			total = total + produto.getPreco();
 	    }
-		this.valorTotal = total;
 		return total;
 	}
 
-	public double getValorTotal() {
-		return valorTotal;
-	}
+	
 
 }
 

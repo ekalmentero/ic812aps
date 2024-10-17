@@ -1,16 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<meta charset="ISO-8859-1">
-<title>Buscar Produto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
 
-<form action="buscarproduto" method="post" ">
-	<label for="fname">Informe a palavra-chave que deseja buscar:</label><br>
-	<input type="text" id="palavrachave" name="palavrachave" value=""><br>
-	<br>
-	<input type="submit" value="Buscar">
-</form> 
+<div class="container">
+    <h1>Buscar Produto</h1>
+    <form action="buscarproduto" method="post">
+        <label for="palavrachave">Informe a palavra-chave que deseja buscar:</label>
+        <input type="text" id="palavrachave" name="palavrachave" value="">
+        <input type="submit" value="Buscar">
+    </form>
+</div>
+
 </body>
 </html>
